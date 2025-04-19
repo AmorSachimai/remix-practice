@@ -16,6 +16,6 @@
   "devDependencies": {
     "@types/uuid": "^10.0.0",
     "typescript": "catalog:",
-    "vitest": "^3.1.1"
+    "vitest": "catalog:"
   }
 }
