@@ -79,6 +79,12 @@ importers:
         specifier: ^4.2.1
         version: 4.3.2(typescript@5.8.3)(vite@6.3.2(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.1))
 
+  packages/ndl-search:
+    devDependencies:
+      typescript:
+        specifier: 'catalog:'
+        version: 5.8.3
+
 packages:
 
   '@alloc/quick-lru@5.2.0':

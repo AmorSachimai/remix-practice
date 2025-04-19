@@ -1,0 +1,14 @@
+{
+  "name": "@my-packages/ndl-search",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  }
+}
