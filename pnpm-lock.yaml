@@ -4,6 +4,24 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@types/react':
+      specifier: ^19.1.2
+      version: 19.1.2
+    '@types/react-dom':
+      specifier: ^19.1.2
+      version: 19.1.2
+    react:
+      specifier: ^19.1.0
+      version: 19.1.0
+    react-dom:
+      specifier: ^19.1.0
+      version: 19.1.0
+    typescript:
+      specifier: ^5.8.3
+      version: 5.8.3
+
 importers:
 
   .:
@@ -27,20 +45,20 @@ importers:
         specifier: ^4.1.0
         version: 4.4.0
       react:
-        specifier: ^19.1.0
+        specifier: 'catalog:'
         version: 19.1.0
       react-dom:
-        specifier: ^19.1.0
+        specifier: 'catalog:'
         version: 19.1.0(react@19.1.0)
     devDependencies:
       '@remix-run/dev':
         specifier: ^2.16.5
         version: 2.16.5(@remix-run/react@2.16.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3))(@remix-run/serve@2.16.5(typescript@5.8.3))(@types/node@22.14.1)(jiti@1.21.7)(typescript@5.8.3)(vite@6.3.2(@types/node@22.14.1)(jiti@1.21.7)(yaml@2.7.1))(yaml@2.7.1)
       '@types/react':
-        specifier: ^19.1.2
+        specifier: 'catalog:'
         version: 19.1.2
       '@types/react-dom':
-        specifier: ^19.1.2
+        specifier: 'catalog:'
         version: 19.1.2(@types/react@19.1.2)
       autoprefixer:
         specifier: ^10.4.19
@@ -52,7 +70,7 @@ importers:
         specifier: ^3.4.4
         version: 3.4.17
       typescript:
-        specifier: ^5.8.3
+        specifier: 'catalog:'
         version: 5.8.3
       vite:
         specifier: ^6.0.0
