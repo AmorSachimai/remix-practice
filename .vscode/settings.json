@@ -5,6 +5,7 @@
     "dcndl",
     "dpid",
     "mediatype",
-    "rdfs"
+    "rdfs",
+    "uuidv"
   ]
 }

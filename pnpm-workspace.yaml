@@ -1,6 +1,7 @@
 packages:
   - "app"
   - "packages/*"
+  - "core/*"
 
 catalog:
   typescript: ^5.8.3
