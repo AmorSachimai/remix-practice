@@ -1,0 +1,20 @@
+{
+  "name": "@my-packages/ndl-search",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.2.0",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "^3.1.1"
+  }
+}
