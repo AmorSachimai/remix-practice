@@ -1,4 +1,7 @@
-const a = 1;
-const b = 2;
-
-console.log(`${a + b}`);
+// Open Search API
+export { OpenSearchAPI } from "./open-search-api";
+export type {
+  NDC,
+  OpenSearchOptions,
+  OpenSearchResponseType,
+} from "./open-search-api/types";
