@@ -1,5 +1,5 @@
 // Open Search API
-export { OpenSearchAPI } from "./open-search-api";
+export { OpenSearchAPI, OpenSearchApiRssParser } from "./open-search-api";
 export type {
   NDC,
   OpenSearchOptions,
