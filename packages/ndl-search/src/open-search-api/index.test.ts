@@ -11,6 +11,7 @@ describe("OpenSearchApiRssParser()", () => {
 
     expect(data.rss.channel["openSearch:totalResults"]).toEqual(0);
     expect(items).toBeUndefined();
+    expect(data).toMatchSnapshot();
   });
 
   it("検索結果が1件の時itemはobject型", () => {
@@ -24,6 +25,7 @@ describe("OpenSearchApiRssParser()", () => {
         "Clean Architecture : 達人に学ぶソフトウェアの構造と設計",
       );
     }
+    expect(data).toMatchSnapshot();
   });
 
   it("検索結果が複数件の時itemは配列型", () => {
@@ -36,5 +38,6 @@ describe("OpenSearchApiRssParser()", () => {
       // 規定値は200件が最大
       expect(items.length).toEqual(200);
     }
+    expect(data).toMatchSnapshot();
   });
 });
