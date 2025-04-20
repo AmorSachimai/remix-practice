@@ -1,0 +1,21 @@
+{
+  "name": "@core/use-cases",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@core/entities": "workspace:*"
+  },
+  "devDependencies": {
+    "@my-configs/typescript": "workspace:*",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}
