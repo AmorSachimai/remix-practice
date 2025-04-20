@@ -6,7 +6,8 @@
     "dev": "pnpm --filter \"my-remix-app\" dev",
     "lint": "biome check --unsafe",
     "format": "biome check --unsafe --write",
-    "test": "pnpm -r test"
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.0-beta.1"
