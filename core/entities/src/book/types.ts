@@ -1,4 +1,4 @@
-import { BaseEntityProps } from "../base-entity";
+import { BaseEntityProps, BaseObject } from "../base-entity";
 
 export type Book = {
   title: string;
@@ -6,6 +6,6 @@ export type Book = {
   author: string[];
   category: string[];
 };
-
+export type BookObject = Readonly<BaseObject<Book>>;
 export type InitBookProps = BaseEntityProps<Book>;
 export type UpdateBookProps = Partial<Book>;

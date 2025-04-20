@@ -1,6 +1,6 @@
 export type AggregateID = string;
 
-type BaseObject<T> = {
+export type BaseObject<T> = {
   id: AggregateID;
   createdAt: Date;
   updatedAt: Date;
