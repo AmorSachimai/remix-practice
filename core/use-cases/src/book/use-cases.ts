@@ -1,4 +1,4 @@
-import { BookObject, BookRepository } from "@core/entities";
+import type { BookObject, BookRepository } from "@core/entities";
 
 export class BookUseCases {
   constructor(private repository: BookRepository) {}

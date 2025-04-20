@@ -1,4 +1,4 @@
-import { BookEntity, BookRepository } from "@core/entities";
+import { BookEntity, type BookRepository } from "@core/entities";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { BookUseCases } from "./use-cases";
 

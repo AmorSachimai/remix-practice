@@ -1,4 +1,4 @@
-import { BaseEntityProps, BaseObject } from "../base-entity";
+import type { BaseEntityProps, BaseObject } from "../base-entity";
 
 export type Book = {
   title: string;
