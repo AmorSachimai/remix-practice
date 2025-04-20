@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "pnpm --filter \"my-remix-app\" dev",
     "lint": "biome check --unsafe",
     "format": "biome check --unsafe --write",
     "test": "echo \"Error: no test specified\" && exit 1"

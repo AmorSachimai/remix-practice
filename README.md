@@ -17,7 +17,11 @@ A: 単純かつ基礎的なルーティングと SSR が学べる。
 パッケージ管理は pnpm で行っている。
 
 ```bash
+# パッケージインストール
 pnpm install
+
+# 起動
+pnpm dev
 ```
 
 ### lint & format
