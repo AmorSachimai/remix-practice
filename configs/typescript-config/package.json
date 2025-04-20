@@ -1,0 +1,9 @@
+{
+  "name": "@my-configs/typescript",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./modules": "./modules.json",
+    "./react": "./react.json"
+  }
+}
