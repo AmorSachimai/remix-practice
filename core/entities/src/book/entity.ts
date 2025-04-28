@@ -4,8 +4,7 @@ import type { Book } from "./types";
 
 export interface BookRepository {
   findById(id: string): Promise<BookEntity | undefined>;
-  findAll(volume?: number): Promise<BookEntity[]>;
-  findByTitle(title: string): Promise<BookEntity | undefined>;
+  findAll(volume?: number, offset?: number): Promise<BookEntity[]>;
   findByISBN(isbn: string): Promise<BookEntity | undefined>;
 }
 
