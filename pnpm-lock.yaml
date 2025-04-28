@@ -108,6 +108,9 @@ importers:
       '@core/entities':
         specifier: workspace:*
         version: link:../entities
+      '@my-packages/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
     devDependencies:
       '@my-configs/typescript':
         specifier: workspace:*
