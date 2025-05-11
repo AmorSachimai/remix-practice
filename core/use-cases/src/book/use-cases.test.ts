@@ -4,6 +4,9 @@ import { mockBookEntity, mockBooks } from "../__fixtures__/mock-books";
 import { BookUseCases } from "./use-cases";
 
 const mockRepository: BookRepository = {
+  add: vi.fn(),
+  update: vi.fn(),
+  remove: vi.fn(),
   findById: vi.fn(),
   findAll: vi.fn(),
   findByISBN: vi.fn(),
