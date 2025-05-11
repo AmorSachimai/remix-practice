@@ -3,15 +3,30 @@ import { BookEntity } from "./entity";
 import type { Book } from "./types";
 
 describe("BookEntity()", () => {
-  test("新規追加", () => {
+  test("正常系: 新規追加", () => {
     const mockProps: Book = {
-      title: "本の題名",
-      description: "概要",
-      author: [],
-      category: [],
+      isbn: "９78-4-04-８93065-９",
+      title: "Clean Architecture : 達人に学ぶソフトウェアの構造と設計",
+      description: "ｶﾞｲﾖｳﾗﾝ",
+      authors: [],
+      categories: [],
     };
 
     const book = BookEntity.create(mockProps);
-    expect(book.freeze().title).toEqual("本の題名");
+    expect(book.freeze().isbn).toEqual("9784048930659");
+    expect(book.freeze().description).toEqual("ｶﾞｲﾖｳﾗﾝ");
+  });
+  test("異常系: 新規追加", () => {
+    const mockProps: Book = {
+      isbn: "not an isbn",
+      title: "存在しない本の題名",
+      description: "ｶﾞｲﾖｳﾗﾝ",
+      authors: [],
+      categories: [],
+    };
+
+    expect(() => {
+      BookEntity.create(mockProps);
+    }).toThrowError("Invalid ISBN");
   });
 });
