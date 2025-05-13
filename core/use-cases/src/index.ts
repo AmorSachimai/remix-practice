@@ -1,3 +1,2 @@
-export const sum = (a: number, b: number): number => {
-  return a + b;
-};
+export type { BookObject } from "@core/entities";
+export { BookUseCases } from "./book/use-cases";
