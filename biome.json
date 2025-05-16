@@ -23,5 +23,6 @@
         "useImportType": "error"
       }
     }
-  }
+  },
+  "plugins": ["./plugins/no-fn-decl.grit"]
 }
