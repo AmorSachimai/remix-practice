@@ -39,12 +39,12 @@ export default function handleRequest(
       );
 }
 
-function handleBotRequest(
+const handleBotRequest = (
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext,
-) {
+) => {
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
@@ -87,14 +87,14 @@ function handleBotRequest(
 
     setTimeout(abort, ABORT_DELAY);
   });
-}
+};
 
-function handleBrowserRequest(
+const handleBrowserRequest = (
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext,
-) {
+) => {
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
@@ -137,4 +137,4 @@ function handleBrowserRequest(
 
     setTimeout(abort, ABORT_DELAY);
   });
-}
+};
