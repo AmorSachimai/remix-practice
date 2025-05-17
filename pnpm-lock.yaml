@@ -38,6 +38,9 @@ importers:
       '@my-packages/react-ui':
         specifier: workspace:*
         version: link:../packages/react-ui
+      '@my-packages/style-schema':
+        specifier: workspace:*
+        version: link:../packages/style-schema
       '@remix-run/node':
         specifier: ^2.16.5
         version: 2.16.5(typescript@5.8.3)
@@ -66,6 +69,9 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 19.1.2(@types/react@19.1.2)
+      '@vanilla-extract/vite-plugin':
+        specifier: ^5.0.2
+        version: 5.0.2(@types/node@22.15.18)(jiti@2.4.2)(vite@6.3.2(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1))(yaml@2.7.1)
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.21(postcss@8.5.3)
