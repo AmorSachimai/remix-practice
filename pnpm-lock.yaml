@@ -163,6 +163,28 @@ importers:
 
   packages/typescript-config: {}
 
+  packages/ui-components:
+    dependencies:
+      react:
+        specifier: 'catalog:'
+        version: 19.1.0
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.1.0(react@19.1.0)
+    devDependencies:
+      '@my-configs/typescript':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.1.2
+      '@types/react-dom':
+        specifier: 'catalog:'
+        version: 19.1.2(@types/react@19.1.2)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.8.3
+
   packages/utils:
     devDependencies:
       '@my-configs/typescript':
