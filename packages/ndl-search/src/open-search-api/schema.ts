@@ -1,5 +1,10 @@
 import { z } from "zod";
 
+const numberToString = z.union([
+  z.string(),
+  z.number().transform((val) => val.toString()),
+]);
+
 const identifierSchema = z.object({
   "#text": z.union([z.string(), z.number()]),
   "@_xsi:type": z.string(),
@@ -11,6 +16,13 @@ const subjectSchema = z.union([
     "#text": z.union([z.string(), z.number()]),
     "@_xsi:type": z.string(),
   }),
+]);
+
+const creatorSchema = z.union([
+  z.string(),
+  // number型をstring型に変換
+  numberToString,
+  z.array(z.union([z.string(), numberToString])),
 ]);
 
 const itemSchema = z.object({
@@ -49,7 +61,7 @@ const itemSchema = z.object({
     "@_isPermaLink": z.boolean(),
   }),
   pubDate: z.string(),
-  "dc:creator": z.union([z.string(), z.array(z.string())]).optional(),
+  "dc:creator": creatorSchema.optional(),
   "dcndl:creatorTranscription": z
     .union([z.string(), z.array(z.string())])
     .optional(),

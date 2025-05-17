@@ -3,6 +3,7 @@ import { OpenSearchApiRssParser } from ".";
 import { SEARCH_RESPONSE_PATTERN_0 } from "./__fixtures__/response";
 import { SEARCH_RESPONSE_PATTERN_1 } from "./__fixtures__/response1";
 import { SEARCH_RESPONSE_PATTERN_2 } from "./__fixtures__/response2";
+import { SEARCH_RESPONSE_PATTERN_3 } from "./__fixtures__/response3";
 
 describe("OpenSearchApiRssParser()", () => {
   it("検索結果が0件の時itemはundefined", () => {
@@ -34,10 +35,15 @@ describe("OpenSearchApiRssParser()", () => {
 
     expect(data.rss.channel["openSearch:totalResults"] > 1).toBeTruthy();
     expect(Array.isArray(items)).toBeTruthy();
-    if (Array.isArray(items)) {
-      // 規定値は200件が最大
-      expect(items.length).toEqual(200);
-    }
+    expect(data).toMatchSnapshot();
+  });
+
+  it("製作者が数値の場合文字列変換して返す", () => {
+    const data = OpenSearchApiRssParser(SEARCH_RESPONSE_PATTERN_3);
+    const items = data.rss.channel.item;
+
+    expect(data.rss.channel["openSearch:totalResults"] > 1).toBeTruthy();
+    expect(Array.isArray(items)).toBeTruthy();
     expect(data).toMatchSnapshot();
   });
 });
