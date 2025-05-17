@@ -1,5 +1,0 @@
-language js
-
-`function $name($params) { $body }` where {
-  register_diagnostic(span=$name, message="関数宣言ではなく、`const $name = ($params) => {}` を使ってください")
-}
