@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../generated/prisma"
+  moduleFormat = "esm"
+}
+
+// default DB is SQLite
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Book {
+  id          String      @id
+  isbn        String      @unique
+  title       String
+  description String
+  createdAt   DateTime
+  updatedAt   DateTime    @updatedAt
+  authors     Author[]
+  publishers  Publisher[]
+  categories  Category[]
+}
+
+model Author {
+  id    Int    @id @default(autoincrement())
+  kana  String
+  name  String
+  books Book[]
+}
+
+model Publisher {
+  id    Int    @id @default(autoincrement())
+  name  String
+  books Book[]
+}
+
+model Category {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique
+  label String?
+  books Book[]
+}

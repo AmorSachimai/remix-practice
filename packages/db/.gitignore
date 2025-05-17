@@ -1,0 +1,6 @@
+# DB(prisma)
+generated
+*.db
+*.db-journal
+*.sqlite3
+*.sqlite3-journal
