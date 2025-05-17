@@ -12,6 +12,7 @@ const identifierSchema = z.object({
 
 const subjectSchema = z.union([
   z.string(),
+  numberToString,
   z.object({
     "#text": z.union([z.string(), z.number()]),
     "@_xsi:type": z.string(),

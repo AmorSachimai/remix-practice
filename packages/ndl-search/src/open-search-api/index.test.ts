@@ -55,4 +55,12 @@ describe("OpenSearchApiRssParser()", () => {
     expect(Array.isArray(items)).toBeTruthy();
     expect(data).toMatchSnapshot();
   });
+
+  it("subjectがnumberとしてパースされることを修正", () => {
+    const data = OpenSearchApiRssParser(SEARCH_RESPONSE_PATTERN_4);
+    const items = data.rss.channel.item;
+
+    expect(Array.isArray(items)).toBeTruthy();
+    expect(data).toMatchSnapshot();
+  });
 });
