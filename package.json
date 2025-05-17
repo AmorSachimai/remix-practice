@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter \"my-remix-app\" dev",
+    "generate": "pnpm --filter @my-packages/db db:generate",
+    "dev": "pnpm generate && pnpm --filter my-remix-app dev",
     "lint": "biome check --unsafe",
     "format": "biome check --unsafe --write",
     "test": "pnpm -r test",
