@@ -1,3 +1,4 @@
+import { BookCard } from "@my-packages/react-ui";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
@@ -48,6 +49,13 @@ export default function Index() {
             ))}
           </ul>
         </nav>
+        <main>
+          <BookCard
+            title="転生して田舎でスローライフをおくりたい13"
+            imageUrl="https://ndlsearch.ndl.go.jp/thumbnail/9784299065421.jpg"
+            description="待望の第13巻は、お米を求めて海向こうの国へと旅立つ、アルフリート一行のストーリー!"
+          />
+        </main>
       </div>
     </div>
   );
