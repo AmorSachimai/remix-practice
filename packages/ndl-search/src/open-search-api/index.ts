@@ -10,7 +10,8 @@ const OPEN_SEARCH_URL = "https://ndlsearch.ndl.go.jp/api/opensearch" as const;
  * 検索結果のxmlはRSS2.0形式で返却される為、それに準拠したパースを行う。
  */
 export const OpenSearchApiRssParser = (xml: string): OpenSearchResponseType => {
-  const parsedObj = parseOpenSearchXml(xml);
+  const removedBackSlash = xml.replace(/\\/g, "");
+  const parsedObj = parseOpenSearchXml(removedBackSlash);
   return validationOpenSearchSchema(parsedObj);
 };
 
@@ -26,6 +27,5 @@ export const OpenSearchAPI = async (
 
   const res = await fetch(req);
   const xml = await res.text();
-
   return OpenSearchApiRssParser(xml);
 };

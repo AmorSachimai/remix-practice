@@ -4,6 +4,7 @@ import { SEARCH_RESPONSE_PATTERN_0 } from "./__fixtures__/response";
 import { SEARCH_RESPONSE_PATTERN_1 } from "./__fixtures__/response1";
 import { SEARCH_RESPONSE_PATTERN_2 } from "./__fixtures__/response2";
 import { SEARCH_RESPONSE_PATTERN_3 } from "./__fixtures__/response3";
+import { SEARCH_RESPONSE_PATTERN_4 } from "./__fixtures__/response4";
 
 describe("OpenSearchApiRssParser()", () => {
   it("検索結果が0件の時itemはundefined", () => {
@@ -43,6 +44,14 @@ describe("OpenSearchApiRssParser()", () => {
     const items = data.rss.channel.item;
 
     expect(data.rss.channel["openSearch:totalResults"] > 1).toBeTruthy();
+    expect(Array.isArray(items)).toBeTruthy();
+    expect(data).toMatchSnapshot();
+  });
+
+  it("バックスラッシュは削除される事", () => {
+    const data = OpenSearchApiRssParser(SEARCH_RESPONSE_PATTERN_4);
+    const items = data.rss.channel.item;
+
     expect(Array.isArray(items)).toBeTruthy();
     expect(data).toMatchSnapshot();
   });
