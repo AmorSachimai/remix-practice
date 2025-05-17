@@ -35,6 +35,9 @@ importers:
 
   app:
     dependencies:
+      '@my-packages/react-ui':
+        specifier: workspace:*
+        version: link:../packages/ui-components
       '@remix-run/node':
         specifier: ^2.16.5
         version: 2.16.5(typescript@5.8.3)
