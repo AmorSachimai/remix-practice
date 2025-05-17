@@ -1,0 +1,25 @@
+{
+  "name": "@my-packages/db",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc",
+    "db:migrate": "prisma migrate dev",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.7.0"
+  },
+  "devDependencies": {
+    "@my-configs/typescript": "workspace:*",
+    "@types/node": "^22.15.18",
+    "prisma": "^6.7.0",
+    "typescript": "catalog:"
+  }
+}
