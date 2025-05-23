@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "main": "index.ts",
+  "main": "index.css.ts",
   "exports": {
-    ".": "./themes.css.ts",
-    "./reset.css": "./reset.css"
+    ".": "./index.css.ts",
+    "./reset.css": "./reset.css",
+    "./global.css": "./global.css.ts"
   },
   "scripts": {
     "typecheck": "tsc"
