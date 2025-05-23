@@ -53,6 +53,7 @@ export default function Index() {
           <BookCard
             title="転生して田舎でスローライフをおくりたい13"
             imageUrl="https://ndlsearch.ndl.go.jp/thumbnail/9784299065421.jpg"
+            author="錬金王,阿倍野ちゃこ"
             description="待望の第13巻は、お米を求めて海向こうの国へと旅立つ、アルフリート一行のストーリー!"
           />
         </main>
