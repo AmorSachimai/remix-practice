@@ -7,7 +7,9 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import "./tailwind.css";
+// 共通スタイルの適用
+import "@my-packages/style-schema/reset.css";
+import "@my-packages/style-schema/global.css";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
