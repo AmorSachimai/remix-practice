@@ -1,18 +1,24 @@
 import type { FunctionComponent } from "react";
-import { title } from "./styles.css";
+import { layouts, styles } from "./index.css";
 
 export interface BookCardProps {
   title: string;
   imageUrl: string;
+  author: string;
   description?: string;
 }
 
 export const BookCard: FunctionComponent<BookCardProps> = (book) => {
   return (
-    <article>
-      <img src={book.imageUrl} alt="" loading="lazy" />
-      <h1 className={title}>{book.title}</h1>
-      {book.description && <p>{book.description}</p>}
+    <article className={layouts.container}>
+      <img className={styles.image} src={book.imageUrl} alt="" loading="lazy" />
+      <div>
+        <h1 className={styles.title}>{book.title}</h1>
+        <p className={styles.author}>{book.author}</p>
+        {book.description && (
+          <p className={styles.description}>{book.description}</p>
+        )}
+      </div>
     </article>
   );
 };

@@ -6,5 +6,6 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
+  addons: ["storybook-dark-mode"],
 };
 export default config;
