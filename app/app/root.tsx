@@ -3,11 +3,14 @@ import {
   isRouteErrorResponse,
   Links,
   Meta,
+  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
   useRouteError,
 } from "@remix-run/react";
+import { type FunctionComponent, useState } from "react";
+import { layout, styles } from "./root.css";
 
 // 共通スタイルの適用
 import "@my-packages/style-schema/reset.css";
@@ -36,17 +39,16 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <Links />
       </head>
       <body>
-        {children}
+        <div className={layout.contents}>
+          <SideNav />
+          {children}
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
 };
-
-export default function App() {
-  return <Outlet />;
-}
 
 export function ErrorBoundary() {
   const error = useRouteError();
@@ -62,3 +64,54 @@ export function ErrorBoundary() {
     );
   }
 }
+
+export default function App() {
+  return <Outlet />;
+}
+
+const SideNav: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  return (
+    <nav className={layout.navigator}>
+      <div className="">
+        <button type="button" onClick={() => setIsOpen(!isOpen)}>
+          <div className={styles.item}>
+            <span className={styles.label}>{`ライブラリ`}</span>
+          </div>
+        </button>
+        {isOpen && (
+          <ul className={layout.childList}>
+            <li className={styles.item}>
+              <LinkButton href="/" label="Home" />
+            </li>
+            <li className={styles.item}>
+              <LinkButton href="/about" label="About" />
+            </li>
+            <li className={styles.item}>
+              <LinkButton href="/contact" label="contact" />
+            </li>
+          </ul>
+        )}
+      </div>
+
+      <div className={styles.item}>
+        <LinkButton href="/favorites" label="お気に入り" />
+      </div>
+    </nav>
+  );
+};
+
+const LinkButton: FunctionComponent<{ href: string; label: string }> = ({
+  href,
+  label,
+}) => (
+  <NavLink
+    to={href}
+    className={({ isActive }) =>
+      isActive ? `${styles.link} ${styles.highlight}` : styles.link
+    }
+  >
+    <span className={styles.label}>{label}</span>
+  </NavLink>
+);
