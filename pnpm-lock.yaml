@@ -50,6 +50,9 @@ importers:
       '@remix-run/serve':
         specifier: ^2.16.5
         version: 2.16.5(typescript@5.8.3)
+      '@vanilla-extract/css':
+        specifier: ^1.17.2
+        version: 1.17.2
       isbot:
         specifier: ^4.1.0
         version: 4.4.0
