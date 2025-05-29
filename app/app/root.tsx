@@ -10,6 +10,8 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import { type FunctionComponent, useState } from "react";
+import { ArrowIcon } from "./icons/arrow";
+import { BookIcon } from "./icons/book";
 import { layout, styles } from "./root.css";
 
 // 共通スタイルの適用
@@ -74,28 +76,31 @@ const SideNav: FunctionComponent = () => {
 
   return (
     <nav className={layout.navigator}>
-      <div className="">
-        <button type="button" onClick={() => setIsOpen(!isOpen)}>
-          <div className={styles.item}>
-            <span className={styles.label}>{`ライブラリ`}</span>
-          </div>
-        </button>
-        {isOpen && (
-          <ul className={layout.childList}>
-            <li className={styles.item}>
-              <LinkButton href="/" label="Home" />
-            </li>
-            <li className={styles.item}>
-              <LinkButton href="/about" label="About" />
-            </li>
-            <li className={styles.item}>
-              <LinkButton href="/contact" label="contact" />
-            </li>
-          </ul>
-        )}
-      </div>
+      <button type="button" onClick={() => setIsOpen(!isOpen)}>
+        <div className={layout.item}>
+          <span className={styles.label}>
+            <BookIcon />
+            {`ライブラリ`}
+            <ArrowIcon arrowStyle={isOpen ? "v" : ">"} />
+          </span>
+        </div>
+      </button>
 
-      <div className={styles.item}>
+      {isOpen && (
+        <ul className={layout.listBox}>
+          <li className={layout.item}>
+            <LinkButton href="/" label="Home" />
+          </li>
+          <li className={layout.item}>
+            <LinkButton href="/about" label="About" />
+          </li>
+          <li className={layout.item}>
+            <LinkButton href="/contact" label="contact" />
+          </li>
+        </ul>
+      )}
+
+      <div className={layout.item}>
         <LinkButton href="/favorites" label="お気に入り" />
       </div>
     </nav>

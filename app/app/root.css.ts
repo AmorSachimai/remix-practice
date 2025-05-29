@@ -9,14 +9,18 @@ export const layout = {
   navigator: style({
     display: "flex",
     flexDirection: "column",
+    gap: 8,
     width: "240px",
     height: "100vh",
     backgroundColor: colorSchema.secondary,
   }),
-  childList: style({
+  listBox: style({
     display: "flex",
     flexDirection: "column",
     gap: 8,
+  }),
+  item: style({
+    marginInline: "10px",
   }),
 };
 
@@ -36,6 +40,9 @@ export const styles = {
     backgroundColor: colorSchema.primary,
   }),
   label: style({
+    display: "flex",
+    gap: 12,
+    alignItems: "center",
     padding: "20px 10px",
     textAlign: "left",
     lineHeight: 1.5,
