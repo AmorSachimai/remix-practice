@@ -21,9 +21,6 @@ catalogs:
     react-dom:
       specifier: ^19.1.0
       version: 19.1.0
-    typescript:
-      specifier: ^5.8.3
-      version: 5.8.3
     vitest:
       specifier: ^3.2.1
       version: 3.2.1
@@ -141,12 +138,12 @@ importers:
       '@types/node':
         specifier: ^22.15.18
         version: 22.15.18
+      '@typescript/native-preview':
+        specifier: 'catalog:'
+        version: 7.0.0-dev.20250604.1
       prisma:
         specifier: ^6.7.0
         version: 6.8.2(typescript@5.8.3)
-      typescript:
-        specifier: 'catalog:'
-        version: 5.8.3
 
   packages/ndl-search:
     dependencies:
