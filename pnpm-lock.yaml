@@ -222,9 +222,9 @@ importers:
       '@my-configs/typescript':
         specifier: workspace:*
         version: link:../typescript-config
-      typescript:
+      '@typescript/native-preview':
         specifier: 'catalog:'
-        version: 5.8.3
+        version: 7.0.0-dev.20250604.1
 
   packages/typescript-config: {}
 
