@@ -7,7 +7,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc",
+    "typecheck": "tsgo",
     "test": "vitest run"
   },
   "dependencies": {
@@ -15,9 +15,9 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
+    "@typescript/native-preview": "catalog:",
     "@my-configs/typescript": "workspace:*",
     "@types/uuid": "^10.0.0",
-    "typescript": "catalog:",
     "vitest": "catalog:"
   }
 }
