@@ -7,12 +7,12 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc",
+    "typecheck": "tsgo",
     "test": "vitest run"
   },
   "devDependencies": {
+    "@typescript/native-preview": "catalog:",
     "@my-configs/typescript": "workspace:*",
-    "typescript": "catalog:",
     "vitest": "catalog:"
   }
 }
