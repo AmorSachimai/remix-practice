@@ -7,7 +7,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc",
+    "typecheck": "tsgo",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -23,10 +23,10 @@
     "@storybook/react-vite": "^8.6.14",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "@typescript/native-preview": "catalog:",
     "@vanilla-extract/vite-plugin": "^5.0.2",
     "storybook": "^8.6.14",
     "storybook-dark-mode": "^4.0.2",
-    "typescript": "catalog:",
     "vite": "^6.3.2"
   }
 }

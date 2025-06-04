@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { BookCard } from ".";
 
-const meta = {
+const meta: Meta<typeof BookCard> = {
   component: BookCard,
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof BookCard>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
