@@ -7,15 +7,15 @@
   },
   "scripts": {
     "test": "vitest run",
-    "typecheck": "tsc"
+    "typecheck": "tsgo"
   },
   "dependencies": {
     "fast-xml-parser": "^5.2.0",
     "zod": "^3.24.3"
   },
   "devDependencies": {
+    "@typescript/native-preview": "catalog:",
     "@my-configs/typescript": "workspace:*",
-    "typescript": "catalog:",
     "vitest": "catalog:"
   }
 }

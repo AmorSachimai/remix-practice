@@ -7,7 +7,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc",
+    "typecheck": "tsgo",
     "db:migrate": "prisma migrate dev",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
@@ -17,9 +17,9 @@
     "@prisma/client": "^6.7.0"
   },
   "devDependencies": {
+    "@typescript/native-preview": "catalog:",
     "@my-configs/typescript": "workspace:*",
     "@types/node": "^22.15.18",
-    "prisma": "^6.7.0",
-    "typescript": "catalog:"
+    "prisma": "^6.7.0"
   }
 }
