@@ -14,7 +14,7 @@ describe("BookEntity()", () => {
 
     const book = BookEntity.create(mockProps);
     expect(book.freeze().isbn).toEqual("9784048930659");
-    expect(book.freeze().description).toEqual("ｶﾞｲﾖｳﾗﾝ");
+    expect(book.freeze().description).toEqual("ガイヨウラン");
   });
   test("異常系: 新規追加", () => {
     const mockProps: Book = {

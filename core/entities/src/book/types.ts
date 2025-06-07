@@ -1,15 +1,7 @@
-import type { BaseEntityProps, BaseObject } from "../base-entity";
+import type { Author } from "../author/types";
+import type { BaseObject } from "../base-entity";
+import type { Category } from "../category/types";
 
-export type Category = {
-  id: number;
-  name: string;
-  label?: string;
-};
-export type Author = {
-  id: number;
-  name: string;
-  kana: string;
-};
 export type Book = {
   isbn: string;
   title: string;
@@ -17,6 +9,5 @@ export type Book = {
   authors: Author[];
   categories: Category[];
 };
+
 export type BookObject = Readonly<BaseObject<Book>>;
-export type InitBookProps = BaseEntityProps<Book>;
-export type UpdateBookProps = Partial<Book>;
