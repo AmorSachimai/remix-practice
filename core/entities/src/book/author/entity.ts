@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { BaseEntity } from "../base-entity";
+import { BaseEntity } from "../../base-entity";
 import type { Author } from "./types";
 
 /**
@@ -7,6 +7,11 @@ import type { Author } from "./types";
  * BookEntityからのみ利用される
  */
 export class AuthorEntity extends BaseEntity<Author> {
+  /**
+   * 利用予定無し
+   * @param author - Author情報
+   * @returns AuthorEntity
+   */
   static create(author: Author): AuthorEntity {
     const id = uuidv4();
     const validAuthor = AuthorEntity.validation(author);

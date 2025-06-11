@@ -1,8 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
-import { BaseEntity } from "../base-entity";
+import { BaseEntity } from "../../base-entity";
 import type { Category } from "./types";
 
 export class CategoryEntity extends BaseEntity<Category> {
+  /**
+   * 利用予定無し
+   */
   static create(category: Category): CategoryEntity {
     const id = uuidv4();
     const validCategory = CategoryEntity.validation(category);

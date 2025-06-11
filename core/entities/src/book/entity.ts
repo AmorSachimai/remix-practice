@@ -1,9 +1,9 @@
 import { parse as isbnParser } from "isbn3";
 import { v4 as uuidv4 } from "uuid";
-import { AuthorEntity } from "../author/entity";
 import { BaseEntity } from "../base-entity";
 import type { BaseRepository } from "../base-repository";
-import { CategoryEntity } from "../category/entity";
+import { AuthorEntity } from "./author/entity";
+import { CategoryEntity } from "./category/entity";
 import type { Book } from "./types";
 
 export interface BookRepository extends BaseRepository<BookEntity> {
@@ -16,7 +16,7 @@ export class BookEntity extends BaseEntity<Book> {
    */
   static create(book: Book): BookEntity {
     const id = uuidv4();
-    const validBook = BookEntity.validationBook(book);
+    const validBook = BookEntity.validation(book);
     return new BookEntity({ id, props: validBook });
   }
 
@@ -26,7 +26,7 @@ export class BookEntity extends BaseEntity<Book> {
     return !!parsedISBN;
   }
 
-  static validationBook(book: Book): Book {
+  static validation(book: Book): Book {
     const normalizedISBN = book.isbn.normalize("NFKC");
     const parsedISBN = isbnParser(normalizedISBN);
     if (!parsedISBN) {

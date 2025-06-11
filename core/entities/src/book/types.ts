@@ -1,6 +1,6 @@
-import type { Author } from "../author/types";
 import type { BaseObject } from "../base-entity";
-import type { Category } from "../category/types";
+import type { Author } from "./author/types";
+import type { Category } from "./category/types";
 
 export type Book = {
   isbn: string;

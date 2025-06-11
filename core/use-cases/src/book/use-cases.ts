@@ -6,10 +6,7 @@ export class BookUseCases {
 
   async getBookById(id: string): Promise<BookObject | undefined> {
     const book = await this.repository.findById(id);
-    if (!book) {
-      return undefined;
-    }
-    return book.freeze();
+    return book?.freeze();
   }
 
   /**
@@ -33,14 +30,10 @@ export class BookUseCases {
    */
   async getBookByISBN(isbn: string): Promise<BookObject | undefined> {
     if (!isISBN(isbn)) {
-      // console.error("Invalid ISBN format");
       return undefined;
     }
 
     const book = await this.repository.findByISBN(isbn);
-    if (!book) {
-      return undefined;
-    }
-    return book.freeze();
+    return book?.freeze();
   }
 }
