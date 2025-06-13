@@ -11,13 +11,15 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "isbn3": "^1.2.10",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "@typescript/native-preview": "catalog:",
     "@my-configs/typescript": "workspace:*",
+    "@types/bcrypt": "^5.0.2",
     "@types/uuid": "^10.0.0",
+    "@typescript/native-preview": "catalog:",
     "vitest": "catalog:"
   }
 }
