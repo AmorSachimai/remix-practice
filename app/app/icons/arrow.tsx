@@ -49,7 +49,7 @@ export const ArrowIcon: FunctionComponent<BookIconProps> = ({
         <polygon
           points="163.916,0 92.084,71.822 276.258,255.996 92.084,440.178 163.916,512 419.916,255.996"
           style={colorStyle}
-        ></polygon>
+        />
       </g>
     </svg>
   );

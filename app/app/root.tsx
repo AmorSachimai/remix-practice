@@ -80,7 +80,7 @@ const SideNav: FunctionComponent = () => {
         <div className={layout.item}>
           <span className={styles.label}>
             <BookIcon />
-            {`ライブラリ`}
+            {"ライブラリ"}
             <ArrowIcon arrowStyle={isOpen ? "v" : ">"} />
           </span>
         </div>

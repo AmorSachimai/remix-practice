@@ -15,10 +15,7 @@ export class BookUseCases {
    * @param offset 取得する書籍のオフセット
    * @returns 書籍一覧
    */
-  async getBooks(
-    volume: number = 20,
-    offset: number = 0,
-  ): Promise<BookObject[]> {
+  async getBooks(volume = 20, offset = 0): Promise<BookObject[]> {
     const books = await this.repository.findAll(volume, offset);
     return books.map((book) => book.freeze());
   }

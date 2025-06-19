@@ -74,6 +74,7 @@ const handleBotRequest = (
           reject(error);
         },
         onError(error: unknown) {
+          // biome-ignore lint/style/noParameterAssign: Remixのデフォルト設定。ルーティングの設定のフェーズで治す。
           responseStatusCode = 500;
           // Log streaming rendering errors from inside the shell.  Don't log
           // errors encountered during initial shell rendering since they'll
@@ -124,6 +125,7 @@ const handleBrowserRequest = (
           reject(error);
         },
         onError(error: unknown) {
+          // biome-ignore lint/style/noParameterAssign: Remixのデフォルト設定。ルーティングの設定のフェーズで治す。
           responseStatusCode = 500;
           // Log streaming rendering errors from inside the shell.  Don't log
           // errors encountered during initial shell rendering since they'll
