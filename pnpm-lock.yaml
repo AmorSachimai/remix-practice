@@ -33,14 +33,14 @@ importers:
         specifier: 2.0.0
         version: 2.0.0
 
-  app:
+  apps/remix:
     dependencies:
       '@my-packages/react-ui':
         specifier: workspace:*
-        version: link:../packages/react-ui
+        version: link:../../packages/react-ui
       '@my-packages/style-schema':
         specifier: workspace:*
-        version: link:../packages/style-schema
+        version: link:../../packages/style-schema
       '@remix-run/node':
         specifier: ^2.16.5
         version: 2.16.5(typescript@5.8.3)
@@ -1880,9 +1880,6 @@ packages:
   es-errors@1.3.0:
     resolution: {integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==}
     engines: {node: '>= 0.4'}
-
-  es-module-lexer@1.6.0:
-    resolution: {integrity: sha512-qqnD1yMU6tk/jnaMosogGySTZP8YtUgAffA9nMN+E/rjxcfRQ6IEk7IiozUjgxKoFHBGjTLnrHB/YC45r/59EQ==}
 
   es-module-lexer@1.7.0:
     resolution: {integrity: sha512-jEQoCwk8hyb2AZziIOLhDqpm5+2ww5uIE6lkO/6jcOCusfk6LhMHpXXfBLXTZ7Ydyt0j4VoUQv6uGNYbdW+kBA==}
@@ -4278,7 +4275,7 @@ snapshots:
       chokidar: 3.6.0
       cross-spawn: 7.0.6
       dotenv: 16.5.0
-      es-module-lexer: 1.6.0
+      es-module-lexer: 1.7.0
       esbuild: 0.17.6
       esbuild-plugins-node-modules-polyfill: 1.7.0(esbuild@0.17.6)
       execa: 5.1.1
@@ -5335,8 +5332,6 @@ snapshots:
 
   es-errors@1.3.0: {}
 
-  es-module-lexer@1.6.0: {}
-
   es-module-lexer@1.7.0: {}
 
   es-object-atoms@1.1.1:
@@ -6236,7 +6231,7 @@ snapshots:
   micromark@3.2.0:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.4.0
+      debug: 4.4.1
       decode-named-character-reference: 1.1.0
       micromark-core-commonmark: 1.1.0
       micromark-factory-space: 1.1.0
@@ -7227,7 +7222,7 @@ snapshots:
   vite-node@1.6.1(@types/node@22.15.18):
     dependencies:
       cac: 6.7.14
-      debug: 4.4.0
+      debug: 4.4.1
       pathe: 1.1.2
       picocolors: 1.1.1
       vite: 5.4.18(@types/node@22.15.18)
@@ -7245,8 +7240,8 @@ snapshots:
   vite-node@3.0.0-beta.2(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1):
     dependencies:
       cac: 6.7.14
-      debug: 4.4.0
-      es-module-lexer: 1.6.0
+      debug: 4.4.1
+      es-module-lexer: 1.7.0
       pathe: 1.1.2
       vite: 6.3.2(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1)
     transitivePeerDependencies:
@@ -7307,7 +7302,7 @@ snapshots:
 
   vite-tsconfig-paths@4.3.2(typescript@5.8.3)(vite@6.3.2(@types/node@22.15.18)(jiti@2.4.2)(yaml@2.7.1)):
     dependencies:
-      debug: 4.4.0
+      debug: 4.4.1
       globrex: 0.1.2
       tsconfck: 3.1.5(typescript@5.8.3)
     optionalDependencies:
