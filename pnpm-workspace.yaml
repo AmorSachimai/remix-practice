@@ -1,14 +1,17 @@
 packages:
-  - "app"
-  - "packages/*"
-  - "core/*"
-  - "configs/*"
+  - app
+  - packages/*
+  - core/*
+  - configs/*
 
 catalog:
   typescript: ^5.8.3
   react: ^19.1.0
   react-dom: ^19.1.0
-  "@types/react": ^19.1.2
-  "@types/react-dom": ^19.1.2
-  "@typescript/native-preview": ^7.0.0-dev.20250604.1
+  '@types/react': ^19.1.2
+  '@types/react-dom': ^19.1.2
+  '@typescript/native-preview': ^7.0.0-dev.20250604.1
   vitest: ^3.2.1
+
+ignoredBuiltDependencies:
+  - bcrypt
