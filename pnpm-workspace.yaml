@@ -14,4 +14,9 @@ catalog:
   vitest: ^3.2.1
 
 ignoredBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
+  - '@tailwindcss/oxide'
   - bcrypt
+  - esbuild
+  - prisma
