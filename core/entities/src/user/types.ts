@@ -1,5 +1,3 @@
-import type { BaseObject } from "../base-entity";
-
 // 後で実装
 export enum Role {
   admin = 0,
@@ -21,5 +19,3 @@ export type InputUser = {
   email: string;
   password: string;
 };
-
-export type BookObject = Readonly<BaseObject<User>>;
