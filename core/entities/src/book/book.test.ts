@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { BookEntity } from "./entity";
+import { BookEntity } from "./book";
 import type { Book } from "./types";
 
 describe("BookEntity()", () => {
@@ -16,6 +16,7 @@ describe("BookEntity()", () => {
     expect(book.freeze().isbn).toEqual("9784048930659");
     expect(book.freeze().description).toEqual("ガイヨウラン");
   });
+
   test("異常系: 新規追加", () => {
     const mockProps: Book = {
       isbn: "not an isbn",

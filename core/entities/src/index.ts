@@ -1,5 +1,11 @@
-export { BookEntity, type BookRepository } from "./book/entity";
-export type { Book, BookObject } from "./book/types";
+// 外部(UseCaseやRepository)へのエクスポート
+
+export {
+  type Book,
+  BookEntity,
+  type BookObject,
+  type BookRepository,
+} from "./book";
 
 export {
   type InputUser,
