@@ -1,0 +1,22 @@
+{
+  "name": "@core/services",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsgo",
+    "test:sample": "vitest run"
+  },
+  "dependencies": {
+    "@my-packages/utils": "workspace:*",
+    "@core/entities": "workspace:*"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "catalog:",
+    "@my-configs/typescript": "workspace:*",
+    "vitest": "catalog:"
+  }
+}
