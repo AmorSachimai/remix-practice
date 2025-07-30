@@ -5,7 +5,7 @@ import { EmailEntity } from "./email";
 import { PasswordEntity } from "./password";
 import type { InputUser, User } from "./types";
 
-export interface UserRepository extends BaseRepository<User> {
+export interface UserRepository extends BaseRepository<UserEntity> {
   findByEmail(email: string): Promise<UserEntity | undefined>;
   findByName(name: string): Promise<UserEntity | undefined>;
 }
