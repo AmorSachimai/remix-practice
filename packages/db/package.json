@@ -7,7 +7,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsgo",
+    "typecheck": "pnpm run db:generate && tsgo",
     "db:migrate": "prisma migrate dev",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
