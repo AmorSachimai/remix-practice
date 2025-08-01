@@ -1,2 +1,2 @@
-export type { BookObject } from "@sample/entities";
+export type { BookModel } from "@sample/entities";
 export { BookUseCases } from "./book/use-cases";

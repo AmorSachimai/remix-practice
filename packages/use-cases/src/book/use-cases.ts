@@ -1,10 +1,10 @@
-import type { BookObject, BookRepository } from "@sample/entities";
+import type { BookModel, BookRepository } from "@sample/entities";
 import { isISBN } from "@sample/utils";
 
 export class BookUseCases {
   constructor(private repository: BookRepository) {}
 
-  async getBookById(id: string): Promise<BookObject | undefined> {
+  async getBookById(id: string): Promise<BookModel | undefined> {
     const book = await this.repository.findById(id);
     return book?.freeze();
   }
@@ -15,7 +15,7 @@ export class BookUseCases {
    * @param offset 取得する書籍のオフセット
    * @returns 書籍一覧
    */
-  async getBooks(volume = 20, offset = 0): Promise<BookObject[]> {
+  async getBooks(volume = 20, offset = 0): Promise<BookModel[]> {
     const books = await this.repository.findAll(volume, offset);
     return books.map((book) => book.freeze());
   }
@@ -25,7 +25,7 @@ export class BookUseCases {
    * @param isbn 書籍のISBN
    * @returns 書籍情報
    */
-  async getBookByISBN(isbn: string): Promise<BookObject | undefined> {
+  async getBookByISBN(isbn: string): Promise<BookModel | undefined> {
     if (!isISBN(isbn)) {
       return undefined;
     }

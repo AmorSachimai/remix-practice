@@ -3,7 +3,7 @@
 export {
   type Book,
   BookEntity,
-  type BookObject,
+  type BookModel,
   type BookRepository,
 } from "./book";
 

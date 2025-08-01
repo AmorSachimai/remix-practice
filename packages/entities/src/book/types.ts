@@ -1,4 +1,4 @@
-import type { BaseObject } from "../base-entity";
+import type { Model } from "../base-entity";
 import type { Author } from "./author/types";
 import type { Category } from "./category/types";
 
@@ -10,4 +10,4 @@ export type Book = {
   categories: Category[];
 };
 
-export type BookObject = Readonly<BaseObject<Book>>;
+export type BookModel = Readonly<Model<Book>>;

@@ -1,10 +1,12 @@
 export type AggregateID = string;
 
-export type BaseObject<T> = {
+type Open<T> = { [P in keyof T]: T[P] };
+type BaseModel<T> = {
   id: AggregateID;
   createdAt: Date;
   updatedAt: Date;
 } & T;
+export type Model<T> = Open<BaseModel<T>>;
 
 export type BaseEntityProps<T> = {
   id: AggregateID;
@@ -46,7 +48,7 @@ export abstract class BaseEntity<T extends { [key: string]: unknown }> {
   /**
    * ### プロパティをすべて返す(読み込み専用)
    */
-  public freeze(): Readonly<BaseObject<T>> {
+  public freeze(): Readonly<Model<T>> {
     const propsCopy = {
       id: this._id,
       createdAt: this.createdAt,
