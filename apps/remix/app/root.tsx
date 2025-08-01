@@ -15,8 +15,8 @@ import { BookIcon } from "./icons/book";
 import { layout, styles } from "./root.css";
 
 // 共通スタイルの適用
-import "@my-packages/style-schema/reset.css";
-import "@my-packages/style-schema/global.css";
+import "@sample/style-schema/reset.css";
+import "@sample/style-schema/global.css";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },

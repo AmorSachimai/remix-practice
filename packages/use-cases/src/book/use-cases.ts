@@ -1,5 +1,5 @@
 import type { BookObject, BookRepository } from "@core/entities";
-import { isISBN } from "@my-packages/utils";
+import { isISBN } from "@sample/utils";
 
 export class BookUseCases {
   constructor(private repository: BookRepository) {}

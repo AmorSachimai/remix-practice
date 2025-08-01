@@ -1,4 +1,4 @@
-// import { colorSchema } from "@my-packages/style-schema";
+// import { colorSchema } from "@sample/style-schema";
 import { style } from "@vanilla-extract/css";
 
 export const layouts = {

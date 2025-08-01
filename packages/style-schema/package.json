@@ -1,5 +1,5 @@
 {
-  "name": "@my-packages/style-schema",
+  "name": "@sample/style-schema",
   "version": "0.0.0",
   "private": true,
   "type": "module",

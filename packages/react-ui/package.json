@@ -1,5 +1,5 @@
 {
-  "name": "@my-packages/react-ui",
+  "name": "@sample/react-ui",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -12,7 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@my-packages/style-schema": "workspace:*",
+    "@sample/style-schema": "workspace:*",
     "@vanilla-extract/css": "^1.17.2",
     "react": "catalog:",
     "react-dom": "catalog:"

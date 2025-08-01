@@ -11,7 +11,7 @@
     "test:sample": "vitest run"
   },
   "dependencies": {
-    "@my-packages/utils": "workspace:*",
+    "@sample/utils": "workspace:*",
     "@core/entities": "workspace:*"
   },
   "devDependencies": {

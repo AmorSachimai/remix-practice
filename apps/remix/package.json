@@ -10,8 +10,8 @@
     "typecheck": "tsgo"
   },
   "dependencies": {
-    "@my-packages/react-ui": "workspace:*",
-    "@my-packages/style-schema": "workspace:*",
+    "@sample/react-ui": "workspace:*",
+    "@sample/style-schema": "workspace:*",
     "@remix-run/node": "^2.16.5",
     "@remix-run/react": "^2.16.5",
     "@remix-run/serve": "^2.16.5",

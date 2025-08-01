@@ -1,5 +1,5 @@
 {
-  "name": "@my-packages/ndl-search",
+  "name": "@sample/ndl-search",
   "type": "module",
   "private": true,
   "exports": {

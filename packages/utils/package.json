@@ -1,5 +1,5 @@
 {
-  "name": "@my-packages/utils",
+  "name": "@sample/utils",
   "version": "0.0.0",
   "type": "module",
   "private": true,

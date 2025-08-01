@@ -8,7 +8,7 @@ reset.css もそのうち移行する。
 
 ```ts
 // component.css.ts
-import { globalStyles } from "@my-packages/style-schema";
+import { globalStyles } from "@sample/style-schema";
 import { style } from "@vanilla-extract/css";
 
 export const title = style({
@@ -34,5 +34,5 @@ export default defineConfig({
 
 ```ts
 // エントリーポイント.ts
-import "@my-packages/style-schema/reset.css";
+import "@sample/style-schema/reset.css";
 ```
