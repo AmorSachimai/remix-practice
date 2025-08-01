@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
+import { UserEntity } from "./main";
 import type { InputUser } from "./types";
-import { UserEntity } from "./user";
 
 const MOCK_INPUT_USER: InputUser = {
   name: "sampleUser",
