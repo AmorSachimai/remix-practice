@@ -13,7 +13,7 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "isbn3": "^1.2.10",
-    "uuid": "^10.0.0"
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@my-configs/typescript": "workspace:*",
