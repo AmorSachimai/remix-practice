@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@typescript/native-preview": "catalog:",
-    "@my-configs/typescript": "workspace:*",
+    "@sample/typescript": "workspace:*",
     "vitest": "catalog:"
   }
 }

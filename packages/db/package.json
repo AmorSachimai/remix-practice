@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@typescript/native-preview": "catalog:",
-    "@my-configs/typescript": "workspace:*",
+    "@sample/typescript": "workspace:*",
     "@types/node": "^22.15.18",
     "prisma": "^6.7.0"
   }
