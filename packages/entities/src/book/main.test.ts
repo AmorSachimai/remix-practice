@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { BookEntity } from "./book";
+import { BookEntity } from "./main";
 import type { Book } from "./types";
 
 describe("BookEntity()", () => {
