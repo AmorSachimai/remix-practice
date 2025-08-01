@@ -1,5 +1,5 @@
-import { BookCard } from "@sample/react-ui";
 import type { MetaFunction } from "@remix-run/node";
+import { BookCard } from "@sample/react-ui";
 
 export const meta: MetaFunction = () => {
   return [
