@@ -1,4 +1,4 @@
-import type { BookObject, BookRepository } from "@core/entities";
+import type { BookObject, BookRepository } from "@sample/entities";
 import { isISBN } from "@sample/utils";
 
 export class LibraryService {

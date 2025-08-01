@@ -1,4 +1,4 @@
-import type { BookRepository } from "@core/entities";
+import type { BookRepository } from "@sample/entities";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { mockBookEntity, mockBooks } from "../__fixtures__/mock-books";
 import { BookUseCases } from "./use-cases";

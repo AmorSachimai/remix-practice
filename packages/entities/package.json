@@ -1,5 +1,5 @@
 {
-  "name": "@core/entities",
+  "name": "@sample/entities",
   "version": "0.0.0",
   "type": "module",
   "private": true,

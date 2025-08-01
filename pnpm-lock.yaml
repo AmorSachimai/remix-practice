@@ -248,7 +248,7 @@ importers:
 
   packages/services:
     dependencies:
-      '@core/entities':
+      '@sample/entities':
         specifier: workspace:*
         version: link:../entities
       '@sample/utils':
@@ -282,7 +282,7 @@ importers:
 
   packages/use-cases:
     dependencies:
-      '@core/entities':
+      '@sample/entities':
         specifier: workspace:*
         version: link:../entities
       '@sample/utils':

@@ -1,4 +1,4 @@
-import { BookEntity } from "@core/entities";
+import { BookEntity } from "@sample/entities";
 
 export const mockBooks = Array<number>(20).map((value) => {
   return new BookEntity({

@@ -1,2 +1,2 @@
-export type { BookObject } from "@core/entities";
+export type { BookObject } from "@sample/entities";
 export { LibraryService } from "./library/service";
