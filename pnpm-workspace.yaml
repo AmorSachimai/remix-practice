@@ -8,15 +8,15 @@ catalog:
   typescript: ^5.8.3
   react: ^19.1.0
   react-dom: ^19.1.0
-  '@types/react': ^19.1.2
-  '@types/react-dom': ^19.1.2
-  '@typescript/native-preview': ^7.0.0-dev.20250702.1
+  "@types/react": ^19.1.2
+  "@types/react-dom": ^19.1.2
+  "@typescript/native-preview": ^7.0.0-dev.20250804.1
   vitest: ^3.2.1
 
 ignoredBuiltDependencies:
-  - '@prisma/client'
-  - '@prisma/engines'
-  - '@tailwindcss/oxide'
+  - "@prisma/client"
+  - "@prisma/engines"
+  - "@tailwindcss/oxide"
   - bcrypt
   - esbuild
   - prisma
