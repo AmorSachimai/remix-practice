@@ -186,10 +186,10 @@ importers:
       '@prisma/client':
         specifier: ^6.7.0
         version: 6.13.0(prisma@6.13.0(typescript@5.9.2))(typescript@5.9.2)
-    devDependencies:
       '@sample/entities':
         specifier: workspace:*
         version: link:../entities
+    devDependencies:
       '@sample/typescript':
         specifier: workspace:*
         version: link:../typescript-config
