@@ -1,32 +1,32 @@
 export type AggregateID = string;
 
 type Open<T> = { [P in keyof T]: T[P] };
-type BaseModel<T> = {
+type BaseObject<T> = {
   id: AggregateID;
   createdAt: Date;
   updatedAt: Date;
 } & T;
-export type Model<T> = Open<BaseModel<T>>;
+export type EntityObject<T> = Open<Readonly<BaseObject<T>>>;
 
-export type BaseEntityProps<T> = {
+type EntityProps<T> = {
   id: AggregateID;
   props: T;
   createdAt?: Date;
   updatedAt?: Date;
 };
 
-export abstract class Entity<T extends { [key: string]: unknown }> {
-  protected readonly _id: AggregateID;
-  protected readonly props: T;
+export abstract class Entity<T extends Record<string, unknown> | unknown> {
+  private readonly _id: AggregateID;
   private readonly _createdAt: Date;
+  private _props: T;
   private _updatedAt: Date;
 
-  constructor({ id, props, createdAt, updatedAt }: BaseEntityProps<T>) {
+  constructor({ id, props, createdAt, updatedAt }: EntityProps<T>) {
     const now = new Date();
     this._id = id;
     this._createdAt = createdAt ?? now;
     this._updatedAt = updatedAt ?? now;
-    this.props = props;
+    this._props = props;
   }
 
   get id(): AggregateID {
@@ -41,14 +41,22 @@ export abstract class Entity<T extends { [key: string]: unknown }> {
     return this._updatedAt;
   }
 
-  set updateAt(date: Date) {
-    this._updatedAt = date;
+  get props(): Readonly<T> {
+    return Object.freeze(this._props);
+  }
+
+  /**
+   * propsの更新を行います
+   */
+  protected set updateProps(props: T) {
+    this._props = props;
+    this._updatedAt = new Date();
   }
 
   /**
    * ### プロパティをすべて返す(読み込み専用)
    */
-  public freeze(): Readonly<Model<T>> {
+  public freeze(): EntityObject<T> {
     const propsCopy = {
       id: this._id,
       createdAt: this.createdAt,
