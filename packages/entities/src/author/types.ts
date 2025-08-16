@@ -1,3 +1,5 @@
+import type { EntityObject } from "../_base/entity";
+
 export type Author = {
   name: string;
   kana: string;
@@ -6,3 +8,5 @@ export type Author = {
   imageUrl: string | undefined;
   twitterUrl: string | undefined;
 };
+
+export type AuthorObject = EntityObject<Author>;

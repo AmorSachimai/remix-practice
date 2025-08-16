@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { Entity } from "../_base/entity";
+import type { Repository } from "../_base/repository";
 import type { Author } from "./types";
 
 /**
@@ -51,3 +52,5 @@ export class AuthorEntity extends Entity<Author> {
     };
   }
 }
+
+export interface AuthorRepository extends Repository<Author> {}
