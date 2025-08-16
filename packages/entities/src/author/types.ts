@@ -1,4 +1,4 @@
-import type { EntityObject } from "../_base/entity";
+import type { EntityObject } from "../_base";
 
 export type Author = {
   name: string;

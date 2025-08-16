@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { Entity } from "../_base/entity";
-import type { Repository } from "../_base/repository";
+import { Entity, type Repository } from "../_base";
 import type { Author } from "./types";
 
 /**

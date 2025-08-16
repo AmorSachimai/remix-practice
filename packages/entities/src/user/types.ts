@@ -1,3 +1,5 @@
+import type { EntityObject } from "../_base";
+
 // 後で実装
 export enum Role {
   admin = 0,
@@ -10,6 +12,7 @@ export type User = {
   email: string;
   passwordHash: string;
 };
+export type UserObject = EntityObject<User>;
 
 /**
  * 新規作成時にユーザーが入力する内容

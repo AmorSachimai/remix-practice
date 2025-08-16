@@ -1,7 +1,6 @@
 import { parse as isbnParser } from "isbn3";
 import { v4 as uuidv4 } from "uuid";
-import { Entity } from "../_base/entity";
-import type { Repository } from "../_base/repository";
+import { Entity, type Repository } from "../_base";
 import { AuthorEntity } from "./author/entity";
 import { CategoryEntity } from "./category/entity";
 import type { Book } from "./types";

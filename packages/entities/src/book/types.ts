@@ -1,4 +1,4 @@
-import type { EntityObject } from "../_base/entity";
+import type { EntityObject } from "../_base";
 import type { Author } from "./author/types";
 import type { Category } from "./category/types";
 

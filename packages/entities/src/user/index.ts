@@ -1,2 +1,2 @@
 export { UserEntity, type UserRepository } from "./main";
-export type { InputUser, User } from "./types";
+export type { InputUser, User, UserObject } from "./types";
