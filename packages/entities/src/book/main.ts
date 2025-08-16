@@ -1,6 +1,6 @@
 import { parse as isbnParser } from "isbn3";
 import { v4 as uuidv4 } from "uuid";
-import { BaseEntity } from "../base-entity";
+import { Entity } from "../base-entity";
 import type { BaseRepository } from "../base-repository";
 import { AuthorEntity } from "./author/entity";
 import { CategoryEntity } from "./category/entity";
@@ -10,7 +10,7 @@ export interface BookRepository extends BaseRepository<BookEntity> {
   findByISBN(isbn: string): Promise<BookEntity | undefined>;
 }
 
-export class BookEntity extends BaseEntity<Book> {
+export class BookEntity extends Entity<Book> {
   /**
    * Entityの新規作成時に利用
    */

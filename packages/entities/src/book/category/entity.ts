@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
-import { BaseEntity } from "../../base-entity";
+import { Entity } from "../../base-entity";
 import type { Category } from "./types";
 
-export class CategoryEntity extends BaseEntity<Category> {
+export class CategoryEntity extends Entity<Category> {
   /**
    * 利用予定無し
    */

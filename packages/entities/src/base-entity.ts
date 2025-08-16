@@ -15,7 +15,7 @@ export type BaseEntityProps<T> = {
   updatedAt?: Date;
 };
 
-export abstract class BaseEntity<T extends { [key: string]: unknown }> {
+export abstract class Entity<T extends { [key: string]: unknown }> {
   protected readonly _id: AggregateID;
   protected readonly props: T;
   private readonly _createdAt: Date;

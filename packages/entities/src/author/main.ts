@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
-import { BaseEntity } from "../base-entity";
+import { Entity } from "../base-entity";
 import type { Author } from "./types";
 
 /**
  * ### 著者に関するロジックをまとめたクラス
  */
-export class AuthorEntity extends BaseEntity<Author> {
+export class AuthorEntity extends Entity<Author> {
   /**
    * ### 著者の新規作成時に利用
    * @param author - Author情報

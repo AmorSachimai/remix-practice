@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { BaseEntity } from "../base-entity";
+import { Entity } from "../base-entity";
 import type { BaseRepository } from "../base-repository";
 import { EmailEntity } from "./email";
 import { PasswordEntity } from "./password";
@@ -14,7 +14,7 @@ export interface UserRepository extends BaseRepository<UserEntity> {
  * UserEntityは、ユーザー情報を管理するエンティティです。
  * ユーザーの作成、パスワードのハッシュ化、検証などの機能を提供します。
  */
-export class UserEntity extends BaseEntity<User> {
+export class UserEntity extends Entity<User> {
   /**
    * Userの新規作成時に利用
    * @param inputUser ユーザー作成に必要な情報を含むオブジェクト
