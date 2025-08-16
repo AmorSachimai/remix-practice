@@ -1,0 +1,8 @@
+export type Author = {
+  name: string;
+  kana: string;
+  nickname: string | undefined;
+  description: string | undefined;
+  imageUrl: string | undefined;
+  twitterUrl: string | undefined;
+};
