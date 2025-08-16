@@ -1,4 +1,4 @@
-import type { Model } from "../base-entity";
+import type { Model } from "../_base/entity";
 import type { Author } from "./author/types";
 import type { Category } from "./category/types";
 

@@ -1,12 +1,12 @@
 import { parse as isbnParser } from "isbn3";
 import { v4 as uuidv4 } from "uuid";
-import { Entity } from "../base-entity";
-import type { BaseRepository } from "../base-repository";
+import { Entity } from "../_base/entity";
+import type { Repository } from "../_base/repository";
 import { AuthorEntity } from "./author/entity";
 import { CategoryEntity } from "./category/entity";
 import type { Book } from "./types";
 
-export interface BookRepository extends BaseRepository<BookEntity> {
+export interface BookRepository extends Repository<BookEntity> {
   findByISBN(isbn: string): Promise<BookEntity | undefined>;
 }
 

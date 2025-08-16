@@ -1,4 +1,4 @@
-export interface BaseRepository<T> {
+export interface Repository<T> {
   add(entity: T): Promise<void>;
   update(entity: T): Promise<void>;
   remove(id: string): Promise<void>;

@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
-import { Entity } from "../base-entity";
-import type { BaseRepository } from "../base-repository";
+import { Entity } from "../_base/entity";
+import type { Repository } from "../_base/repository";
 import { EmailEntity } from "./email";
 import { PasswordEntity } from "./password";
 import type { InputUser, User } from "./types";
 
-export interface UserRepository extends BaseRepository<UserEntity> {
+export interface UserRepository extends Repository<UserEntity> {
   findByEmail(email: string): Promise<UserEntity | undefined>;
   findByName(name: string): Promise<UserEntity | undefined>;
 }
