@@ -41,7 +41,6 @@ export class AuthorEntity extends Entity<Author> {
     }
 
     return {
-      ...author,
       name,
       kana,
       nickname: author.nickname?.normalize("NFKC").trim(),
@@ -49,6 +48,15 @@ export class AuthorEntity extends Entity<Author> {
       imageUrl: author.imageUrl?.normalize("NFKC").trim(),
       twitterUrl: author.twitterUrl?.normalize("NFKC").trim(),
     };
+  }
+
+  /**
+   * ### 著者情報の更新を行う
+   * @param author
+   */
+  update(author: Author): void {
+    const validAuthor = AuthorEntity.validation(author);
+    this.updateProps = validAuthor;
   }
 }
 
