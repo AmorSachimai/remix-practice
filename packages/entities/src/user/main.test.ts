@@ -1,4 +1,5 @@
 import { describe, expect, test } from "vitest";
+import { Role } from "../constant";
 import { UserEntity } from "./main";
 import type { InputUser } from "./types";
 
@@ -6,6 +7,7 @@ const MOCK_INPUT_USER: InputUser = {
   name: "sampleUser",
   email: "sample@sample.com",
   password: "samplePassword",
+  role: Role.Administrator,
 };
 
 describe("UserEntity() test", () => {

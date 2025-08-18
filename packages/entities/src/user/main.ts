@@ -20,18 +20,13 @@ export class UserEntity extends Entity<User> {
    * @throws ユーザー情報の検証に失敗した場合はエラーをスローします
    */
   static create(user: InputUser): UserEntity {
-    const validUser = UserEntity.validation({
-      name: user.name,
-      email: user.email,
-      password: user.password,
-    });
+    const validUser = UserEntity.validation(user);
     const passwordHash = PasswordEntity.passwordHash(validUser.password);
     const id = uuidv4();
     return new UserEntity({
       id,
       props: {
-        name: validUser.name,
-        email: validUser.email,
+        ...validUser,
         passwordHash,
       },
     });
@@ -61,6 +56,7 @@ export class UserEntity extends Entity<User> {
     const password = PasswordEntity.validation(user.password);
     const email = EmailEntity.validation(user.email);
     return {
+      ...user,
       name,
       email,
       password,
