@@ -1,12 +1,5 @@
 import type { EntityObject } from "../_base";
 
-// 後で実装
-export enum Role {
-  admin = 0,
-  moderator = 1,
-  guest = 2,
-}
-
 export type User = {
   name: string;
   email: string;
