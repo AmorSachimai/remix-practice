@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@sample/typescript": "workspace:*",
-    "@types/bcrypt": "^5.0.2",
+    "@types/bcrypt": "^6.0.0",
     "@types/uuid": "^10.0.0",
     "@typescript/native-preview": "catalog:",
     "vitest": "catalog:"
