@@ -2,6 +2,22 @@ import bcrypt from "bcrypt";
 
 const PASSWORD_MIN_LENGTH = 8 as const;
 const SALT_ROUNDS = 10 as const;
+/**
+ * ### 予測されやすいパスワード
+ * 辞書形式でやるなら別ファイルに分けていいかも
+ */
+const PREDICTABLE_PASSWORD = new Set<string>([
+  "12345678",
+  "00000000", // 同じ文字列が繰り返し入力されているかの検証をしてもいいかも
+  "11111111",
+  "password",
+  "p@ssw0rd",
+  "1qaz2wsx",
+  "qwertyui",
+  "asdfghjk",
+  "1q2w3e4r",
+  "abcd1234",
+]);
 
 export class PasswordEntity {
   constructor(public password: string) {}
@@ -42,6 +58,9 @@ export class PasswordEntity {
       throw new Error(
         `パスワードは${PASSWORD_MIN_LENGTH}文字以上である必要があります`,
       );
+    }
+    if (PREDICTABLE_PASSWORD.has(normalizedPassword)) {
+      throw new Error("予測されやすいパスワードです");
     }
     return normalizedPassword;
   }

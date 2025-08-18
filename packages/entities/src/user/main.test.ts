@@ -19,25 +19,6 @@ describe("UserEntity() test", () => {
     expect(userObject.email).toEqual(MOCK_INPUT_USER.email);
   });
 
-  test("checkPassword(): ハッシュ化されたパスワードは正常に使える", async () => {
-    const user = UserEntity.create(MOCK_INPUT_USER);
-    const userObject = user.freeze();
-    const passwordHash = userObject.passwordHash;
-
-    // ハッシュ化されているので入力されたパスワードとは異なる
-    expect(passwordHash).not.toEqual(MOCK_INPUT_USER.password);
-
-    // 登録したパスワードをハッシュ化したパスワードでコンパイル
-    expect(
-      await UserEntity.checkPassword(MOCK_INPUT_USER.password, passwordHash),
-    ).toBeTruthy();
-
-    // 間違ったパスワードをハッシュ化したパスワードでコンパイル
-    expect(
-      await UserEntity.checkPassword("incorrect_password", passwordHash),
-    ).toBeFalsy();
-  });
-
   test("validation(): ユーザーネームが空白だとエラーとする", () => {
     const emptyPattern = ["", "    ", "　　　　"];
     emptyPattern.forEach((emptyPattern) => {
@@ -48,26 +29,5 @@ describe("UserEntity() test", () => {
         }),
       ).toThrowError("ユーザー名は必須です");
     });
-  });
-
-  test("validation(): パスワードが空白だとエラーとする", () => {
-    const emptyPattern = ["", "    ", "　　　　"];
-    emptyPattern.forEach((emptyPattern) => {
-      expect(() =>
-        UserEntity.validation({
-          ...MOCK_INPUT_USER,
-          password: emptyPattern,
-        }),
-      ).toThrowError("パスワードは必須です");
-    });
-  });
-
-  test("validation(): パスワードが8文字未満だとエラーとする", () => {
-    expect(() =>
-      UserEntity.validation({
-        ...MOCK_INPUT_USER,
-        password: "passwor",
-      }),
-    ).toThrowError("パスワードは8文字以上である必要があります");
   });
 });
