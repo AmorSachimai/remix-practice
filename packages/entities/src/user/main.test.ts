@@ -70,35 +70,4 @@ describe("UserEntity() test", () => {
       }),
     ).toThrowError("パスワードは8文字以上である必要があります");
   });
-
-  test("validation(): メールアドレスが空白だとエラーとする", () => {
-    const emptyPatterns = ["", "    ", "　　　　"];
-    emptyPatterns.forEach((emptyPattern) => {
-      expect(() =>
-        UserEntity.validation({
-          ...MOCK_INPUT_USER,
-          email: emptyPattern,
-        }),
-      ).toThrowError("メールアドレスは必須です");
-    });
-  });
-
-  test("validation(): メールアドレスが不正な形式だとエラーとする", () => {
-    const incorrectPatterns = [
-      "sample",
-      "sample",
-      "sample@sample@com",
-      "sample@sample,com",
-      "s***e@sample,com",
-      "1234@123.12",
-    ];
-    incorrectPatterns.forEach((incorrectPattern) => {
-      expect(() =>
-        UserEntity.validation({
-          ...MOCK_INPUT_USER,
-          email: incorrectPattern,
-        }),
-      ).toThrowError("メールアドレスの形式が正しくありません");
-    });
-  });
 });

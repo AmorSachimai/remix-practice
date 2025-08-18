@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { Entity, type Repository } from "../_base";
-import { EmailEntity } from "./email";
+import { EmailEntity, Entity, type Repository } from "../_base";
 import { PasswordEntity } from "./password";
 import type { InputUser, User } from "./types";
 
