@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* biome-ignore lint/suspicious/noUnknownAtRules: 後で治す */
 @theme {
   --font-sans:
     "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
@@ -8,6 +9,7 @@
 
 html,
 body {
+  /* biome-ignore lint/suspicious/noUnknownAtRules: 後で治す */
   @apply bg-white dark:bg-gray-950;
 
   @media (prefers-color-scheme: dark) {
