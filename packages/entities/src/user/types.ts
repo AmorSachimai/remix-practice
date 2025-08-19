@@ -5,7 +5,7 @@ export type User = {
   name: string;
   email: string;
   passwordHash: string;
-  role: Role;
+  role: Exclude<Role, Role.Anonymous>;
 };
 export type UserObject = EntityObject<User>;
 
@@ -16,5 +16,5 @@ export type InputUser = {
   name: string;
   email: string;
   password: string;
-  role: Role;
+  role: Exclude<Role, Role.Anonymous>;
 };

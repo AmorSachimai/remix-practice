@@ -1,13 +1,14 @@
 /**
- * Entityで用いられる共通の定数を定義する
- */
-
-/**
  * ### 権限の種類
  * ユーザーと紐づき、各Entityのパーミッションを制御する
  */
 export enum Role {
-  Administrator = 0,
-  Librarian = 1,
-  Member = 2,
+  /** 未ログイン */
+  Anonymous = 0,
+  /** 通常会員 */
+  Member = 1,
+  /** 司書 */
+  Librarian = 2,
+  /** システム管理者 */
+  Administrator = 3,
 }
