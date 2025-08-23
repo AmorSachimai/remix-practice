@@ -41,12 +41,17 @@ export abstract class Entity<T extends Record<string, unknown> | unknown> {
     return this._updatedAt;
   }
 
-  get props(): Readonly<T> {
+  /**
+   * ### propsを返します
+   * ※Entity外からは読み取れないようにしている。
+   */
+  protected get props(): Readonly<T> {
     return Object.freeze(this._props);
   }
 
   /**
-   * propsの更新を行います
+   * ### propsの更新を行います
+   * ※バリデーションやプロパティの検証は更新前に実施
    */
   protected set updateProps(props: T) {
     this._props = props;
