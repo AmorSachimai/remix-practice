@@ -1,0 +1,1 @@
+export { EmailEntity } from "./email";
