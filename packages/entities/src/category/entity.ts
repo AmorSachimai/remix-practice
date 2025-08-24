@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { Entity, type Repository } from "../_base";
+import { StringEntity } from "../_value";
 import type { Category } from "./types";
 
 export class CategoryEntity extends Entity<Category> {
@@ -10,12 +11,12 @@ export class CategoryEntity extends Entity<Category> {
   }
 
   static validation(category: Category): Category {
-    const name = category.name.normalize("NFKC").trim();
-    if (name === "") {
+    const name = StringEntity.validation(category.name);
+    if (name === null) {
       throw new Error("Category name is required");
     }
 
-    const label = category?.label?.normalize("NFKC").trim();
+    const label = StringEntity.validation(category.label) ?? undefined;
     return {
       name,
       label,

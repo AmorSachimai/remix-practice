@@ -1,3 +1,5 @@
+import { StringEntity } from "./string";
+
 const EMAIL_REGEX =
   /^[a-zA-Z0-9_+-]+(.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
 
@@ -11,13 +13,13 @@ export class EmailEntity {
    * @throws emailが空または不正な形式の場合はエラーをスローします
    */
   static validation(email: string): string {
-    const normalizedEmail = email.normalize("NFKC").trim();
-    if (normalizedEmail === "") {
+    const normalized = StringEntity.validation(email);
+    if (normalized === null) {
       throw new Error("メールアドレスは必須です");
     }
-    if (!EMAIL_REGEX.test(normalizedEmail)) {
+    if (!EMAIL_REGEX.test(normalized)) {
       throw new Error("メールアドレスの形式が正しくありません");
     }
-    return normalizedEmail;
+    return normalized;
   }
 }

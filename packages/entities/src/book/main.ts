@@ -1,6 +1,7 @@
 import { parse as isbnParser } from "isbn3";
 import { v4 as uuidv4 } from "uuid";
 import { Entity, type Repository } from "../_base";
+import { StringEntity } from "../_value";
 import { AuthorEntity } from "./author/entity";
 import { CategoryEntity } from "./category/entity";
 import type { Book } from "./types";
@@ -20,29 +21,41 @@ export class BookEntity extends Entity<Book> {
   }
 
   static isISBN(isbn: string): boolean {
-    const normalizedISBN = isbn.normalize("NFKC");
-    const parsedISBN = isbnParser(normalizedISBN);
+    const normalized = StringEntity.validation(isbn);
+    if (normalized === null) {
+      return false;
+    }
+
+    const parsedISBN = isbnParser(normalized);
     return !!parsedISBN;
   }
 
   static validation(book: Book): Book {
-    const normalizedISBN = book.isbn.normalize("NFKC");
+    const normalizedISBN = StringEntity.validation(book.isbn);
+    if (normalizedISBN === null) {
+      throw new Error("ISBNが入力されていません");
+    }
+
     const parsedISBN = isbnParser(normalizedISBN);
-    if (!parsedISBN) {
-      throw new Error("Invalid ISBN");
+    if (parsedISBN === null) {
+      throw new Error("不正なISBNです");
     }
+
     const isbn = parsedISBN.isbn13 || parsedISBN.isbn10;
-    if (!isbn) {
-      throw new Error("Invalid ISBN format");
+    if (isbn === undefined) {
+      throw new Error("不正なISBNです");
     }
-    const title = book.title.normalize("NFKC");
-    if (title.trim() === "") {
-      throw new Error("Title is required");
+
+    const title = StringEntity.validation(book.title);
+    if (title === null) {
+      throw new Error("タイトルは必須です");
     }
-    const description = book.description.normalize("NFKC");
-    if (description.trim() === "") {
-      throw new Error("Description is required");
+
+    const description = StringEntity.validation(book.description);
+    if (description === null) {
+      throw new Error("説明分は必須です");
     }
+
     const categories = book.categories.map(CategoryEntity.validation);
     const authors = book.authors.map(AuthorEntity.validation);
     return {

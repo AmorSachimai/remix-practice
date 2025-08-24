@@ -5,8 +5,6 @@ export type Author = {
   kana: string;
   nickname: string | undefined;
   description: string | undefined;
-  imageUrl: string | undefined;
-  twitterUrl: string | undefined;
 };
 
 export type AuthorObject = EntityObject<Author>;

@@ -28,6 +28,6 @@ describe("BookEntity()", () => {
 
     expect(() => {
       BookEntity.create(mockProps);
-    }).toThrowError("Invalid ISBN");
+    }).toThrowError("不正なISBNです");
   });
 });

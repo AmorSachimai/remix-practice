@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import { StringEntity } from "../_value";
 
 const PASSWORD_MIN_LENGTH = 8 as const;
 const SALT_ROUNDS = 10 as const;
@@ -50,8 +51,8 @@ export class PasswordEntity {
    * @throws パスワードが空または短い場合はエラーをスローします
    */
   static validation(password: string): string {
-    const normalizedPassword = password.normalize("NFKC").trim();
-    if (normalizedPassword === "") {
+    const normalizedPassword = StringEntity.validation(password);
+    if (normalizedPassword === null) {
       throw new Error("パスワードは必須です");
     }
     if (normalizedPassword.length < PASSWORD_MIN_LENGTH) {

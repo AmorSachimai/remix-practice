@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { Entity, type Repository } from "../_base";
-import { EmailEntity } from "../_value";
+import { EmailEntity, StringEntity } from "../_value";
 import { Role } from "../constant";
 import { PasswordEntity } from "./password";
 import type { User } from "./types";
@@ -54,8 +54,8 @@ export class UserEntity extends Entity<User> {
    * @throws エラーが発生した場合は例外をスローします
    */
   static validation(user: User): User {
-    const name = user.name.normalize("NFKC").trim();
-    if (name === "") {
+    const name = StringEntity.validation(user.name);
+    if (name === null) {
       throw new Error("ユーザー名は必須です");
     }
     const password = PasswordEntity.validation(user.password);

@@ -1,6 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
 import { Entity, type Repository } from "../_base";
+import { StringEntity } from "../_value";
 import type { Author } from "./types";
+
+const KANA_REGEX = /^[ァ-ンー　]+$/;
 
 /**
  * ### 著者に関するロジックをまとめたクラス
@@ -25,17 +28,17 @@ export class AuthorEntity extends Entity<Author> {
    * @throws バリデーションエラーをスローします
    */
   static validation(author: Author): Author {
-    const name = author.name.normalize("NFKC").trim();
-    if (name === "") {
+    const name = StringEntity.validation(author.name);
+    if (name === null) {
       throw new Error("著者名は必須です");
     }
 
-    const kana = author.kana.normalize("NFKC").trim();
-    if (kana === "") {
+    const kana = StringEntity.validation(author.kana);
+    if (kana === null) {
       throw new Error("著者名の読み仮名は必須です");
     }
 
-    const isKana = kana.match(/^[ァ-ンー　]+$/);
+    const isKana = KANA_REGEX.test(kana);
     if (!isKana) {
       throw new Error("著者名の読み仮名はカタカナ表記です");
     }
@@ -43,10 +46,8 @@ export class AuthorEntity extends Entity<Author> {
     return {
       name,
       kana,
-      nickname: author.nickname?.normalize("NFKC").trim(),
-      description: author.description?.normalize("NFKC").trim(),
-      imageUrl: author.imageUrl?.normalize("NFKC").trim(),
-      twitterUrl: author.twitterUrl?.normalize("NFKC").trim(),
+      nickname: StringEntity.validation(author.nickname) ?? undefined,
+      description: StringEntity.validation(author.description) ?? undefined,
     };
   }
 

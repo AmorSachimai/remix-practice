@@ -7,8 +7,6 @@ const MOCK_AUTHOR: Author = {
   kana: "ヤマダタロウ",
   nickname: "たろう",
   description: "著者の説明",
-  imageUrl: "http://example.com/image.png",
-  twitterUrl: "https://twitter.com/example",
 };
 
 describe("create()", () => {
@@ -25,8 +23,6 @@ describe("validation()", () => {
       kana: "　ヤマダタロウ　",
       nickname: "　たろう　",
       description: "　説明　",
-      imageUrl: "　http://example.com/image.png　",
-      twitterUrl: "　https://twitter.com/example　",
     };
     const author = AuthorEntity.validation(MOCK_AUTHOR_2);
 
@@ -34,8 +30,6 @@ describe("validation()", () => {
     expect(author.kana).toBe("ヤマダタロウ");
     expect(author.nickname).toBe("たろう");
     expect(author.description).toBe("説明");
-    expect(author.imageUrl).toBe("http://example.com/image.png");
-    expect(author.twitterUrl).toBe("https://twitter.com/example");
   });
 
   it("undefinableなプロパティを有効", () => {
@@ -44,15 +38,11 @@ describe("validation()", () => {
       kana: "ヤマダタロウ",
       nickname: undefined,
       description: undefined,
-      imageUrl: undefined,
-      twitterUrl: undefined,
     };
     const author = AuthorEntity.validation(MOCK_AUTHOR_3);
 
     expect(author.nickname).toBeUndefined();
     expect(author.description).toBeUndefined();
-    expect(author.imageUrl).toBeUndefined();
-    expect(author.twitterUrl).toBeUndefined();
   });
 
   it("名前が空の場合はエラーを投げる", () => {
