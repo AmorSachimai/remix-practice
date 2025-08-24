@@ -61,4 +61,4 @@ export class AuthorEntity extends Entity<Author> {
   }
 }
 
-export interface AuthorRepository extends Repository<Author> {}
+export interface AuthorRepository extends Repository<AuthorEntity> {}
