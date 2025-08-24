@@ -55,9 +55,10 @@ export class AuthorEntity extends Entity<Author> {
    * ### 著者情報の更新を行う
    * @param author
    */
-  update(author: Author): void {
+  update(author: Author): this {
     const validAuthor = AuthorEntity.validation(author);
     this.updateProps = validAuthor;
+    return this;
   }
 }
 
