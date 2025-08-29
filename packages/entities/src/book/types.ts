@@ -1,6 +1,6 @@
 import type { EntityObject } from "../_base";
-import type { Author } from "./author/types";
-import type { Category } from "./category/types";
+import type { Author } from "../author";
+import type { Category } from "../category";
 
 export type Book = {
   isbn: string;

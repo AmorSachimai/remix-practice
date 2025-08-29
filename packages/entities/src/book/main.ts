@@ -2,8 +2,8 @@ import { parse as isbnParser } from "isbn3";
 import { v4 as uuidv4 } from "uuid";
 import { Entity, type Repository } from "../_base";
 import { StringEntity } from "../_value";
-import { AuthorEntity } from "./author/entity";
-import { CategoryEntity } from "./category/entity";
+import { AuthorEntity } from "../author";
+import { CategoryEntity } from "../category";
 import type { Book } from "./types";
 
 export interface BookRepository extends Repository<BookEntity> {
