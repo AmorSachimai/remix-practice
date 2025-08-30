@@ -28,4 +28,4 @@ export class CategoryEntity extends Entity<Category> {
   }
 }
 
-export interface CategoryRepository extends Repository<Category> {}
+export interface CategoryRepository extends Repository<CategoryEntity> {}
